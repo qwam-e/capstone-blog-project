@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Login Page</title>
+</head>
+
+<body>
+  <div class="login-container">
+    
+  <div class="login-card">
+    <h2>Login</h2>
+
+    <form action="/login" method="POST">
+
+      <div class="input-group">
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Password" required>
+      </div>
+
+      <div class="login-extra">
+        <p>Don’t have an account? <a href="/register">Sign up</a></p>
+       </div>
+
+      <button type="submit" class="login-submit">Login</button>
+
+    </form>
+
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compose Blog Post</title>
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  background: linear-gradient(rgba(0,0,0,0.9)),
+              url("/images/kente.jpg");
+  background-size: cover;
+  background-position: center;
+}
+/* NAVBAR */
+.navbar {
+  padding: 15px 40px;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+}
+
+.navbar a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+/* PAGE */
+.compose-container {
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* HEADER */
+.compose-header {
+  margin-bottom: 25px;
+}
+
+.compose-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+}
+
+.compose-header p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* FORM CARD */
+form {
+  background: rgba(15, 23, 42, 0.877);
+  backdrop-filter: blur(10px);
+  /* background: #1e293b; */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* GROUP */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* LABEL */
+.form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #cbd5f5;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+/* TEXTAREA */
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* FOCUS */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #f97316;
+}
+
+/* FILE INPUT */
+input[type="file"] {
+  background: transparent;
+  color: #94a3b8;
+}
+
+/* IMAGE PREVIEW */
+.preview-box {
+  margin-top: 10px;
+}
+
+.preview-box img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: none;
+}
+
+/* DIVIDER */
+.section-divider {
+  height: 1px;
+  background: #334155;
+  margin: 20px 0;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+
+  background: #f97316;
+  border: none;
+  border-radius: 6px;
+
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ea580c;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="logo">sheyshey</div>
+  <a href="/dashboard">← Back to Dashboard</a>
+</div>
+
+<div class="compose-container">
+
+  <div class="compose-header">
+    <h1>Compose Blog Post</h1>
+    <p>Create and publish a new travel story</p>
+  </div>
+
+  <form action="/add-post" method="POST" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label>Post Title</label>
+      <input type="text" name="title" placeholder="e.g. Exploring Cape Coast" required>
+    </div>
+
+    <div class="form-group">
+      <label>Upload Image</label>
+      <input type="file" name="image" id="imageInput" accept="image/*" required>
+
+      <div class="preview-box">
+        <img id="preview">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Opening Hook</label>
+      <textarea name="hook" placeholder="Hook your reader..."></textarea>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="form-group">
+      <label>Section 1 Title</label>
+      <input type="text" name="section1Title">
+    </div>
+
+    <div class="form-group">
+      <label>Section 1 Content</label>
+      <textarea name="section1Content"></textarea>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="form-group">
+      <label>Section 2 Title</label>
+      <input type="text" name="section2Title">
+    </div>
+
+    <div class="form-group">
+      <label>Section 2 Content</label>
+      <textarea name="section2Content"></textarea>
+    </div>
+
+    <button type="submit">Publish Post</button>
+
+  </form>
+
+</div>
+
+<script>
+const imageInput = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+
+imageInput.addEventListener("change", function () {
+  const file = this.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function () {
+      preview.src = reader.result;
+      preview.style.display = "block";
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
+</script>
+
+</body>
+</html>

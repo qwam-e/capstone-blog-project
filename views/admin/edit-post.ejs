@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit Post</title>
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  background: linear-gradient(rgba(0,0,0,0.9)),
+              url("/images/kente.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* PAGE */
+.edit-container {
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* CARD */
+.edit-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+.edit-card h1 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+/* FORM GROUP */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+/* TEXTAREA HEIGHT */
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* FOCUS */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #f97316;
+}
+
+/* BUTTON */
+.update-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+
+  background: #f97316;
+  border: none;
+  border-radius: 6px;
+
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.update-btn:hover {
+  background: #ea580c;
+}
+
+/* NAVBAR */
+.navbar a {
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #60a5fa;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href="/dashboard" >← Back to Dashboard</a>
+</div>
+
+<div class="edit-container">
+
+  <div class="edit-card">
+
+    <h1>Edit Post</h1>
+
+    <form action="/edit/<%= post.id %>" method="POST">
+
+      <div class="form-group">
+        <input type="text" name="title" value="<%= post.title %>" placeholder="Post Title" required>
+      </div>
+
+      <div class="form-group">
+        <textarea name="hook" placeholder="Introduction / Hook"><%= post.hook %></textarea>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="section1Title" value="<%= post.section1Title %>" placeholder="Section 1 Title">
+      </div>
+
+      <div class="form-group">
+        <textarea name="section1Content" placeholder="Section 1 Content"><%= post.section1Content %></textarea>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="section2Title" value="<%= post.section2Title %>" placeholder="Section 2 Title">
+      </div>
+
+      <div class="form-group">
+        <textarea name="section2Content" placeholder="Section 2 Content"><%= post.section2Content %></textarea>
+      </div>
+
+      <button type="submit" class="update-btn">Update Post</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+</body>
+</html>

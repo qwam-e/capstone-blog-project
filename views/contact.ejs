@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+
+<link rel="stylesheet" href="/styles/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  background: linear-gradient(rgba(0,0,0,0.9)),
+              url("/images/kente.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* HERO */
+.contact-hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.contact-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+}
+
+.contact-hero p {
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* CONTAINER */
+.contact-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* LEFT INFO */
+.contact-info h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  color: #cbd5f5;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.contact-info .info-item {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* FORM */
+.contact-form {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.contact-form h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+/* INPUTS */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* BUTTON */
+.contact-btn {
+  width: 100%;
+  padding: 12px;
+  background: #f97316;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #ea580c;
+}
+
+/* SOCIAL */
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  margin-right: 10px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<%- include("partials/navbar") %>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <h1>Contact Me</h1>
+  <p>Let’s connect, collaborate, or just talk travel ✈️</p>
+</section>
+
+<div class="contact-container">
+
+  <!-- LEFT -->
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>
+      Have a question, collaboration idea, or just want to say hi?
+      I’d love to hear from you.
+    </p>
+
+    <div class="info-item">📍 Accra, Ghana</div>
+    <div class="info-item">📧 your@email.com</div>
+    <div class="info-item">📞 +233 xxx xxx xxx</div>
+
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <form class="contact-form" action="/contact" method="POST">
+    <h2>Send a Message</h2>
+
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+
+    <div class="form-group">
+      <textarea name="message" placeholder="Your Message..." required></textarea>
+    </div>
+
+    <button class="contact-btn">Send Message</button>
+  </form>
+
+</div>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= post ? post.title : "Post" %></title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  padding: 15px 40px;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+}
+
+.navbar a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+/* HERO IMAGE */
+.hero-img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* TITLE */
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* HOOK */
+.hook {
+  font-size: 18px;
+  color: #cbd5f5;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.section p {
+  line-height: 1.8;
+  color: #d1d5db;
+}
+
+/* BACK BUTTON */
+.back {
+  display: inline-block;
+  margin-top: 40px;
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+/* NOT FOUND */
+.not-found {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="navbar">
+  <div class="logo">Travel Blog</div>
+  <a href="/blog">← Back to Blog</a>
+</div>
+
+<% if (!post) { %>
+  <div class="not-found">
+    <h1>Post not found</h1>
+    <a href="/blog">Go back</a>
+  </div>
+<% } else { %>
+
+<!-- HERO IMAGE -->
+<img class="hero-img" src="/uploads/<%= post.image || 'default.jpg' %>" alt="">
+
+<div class="container">
+
+  <!-- TITLE -->
+  <h1 class="title"><%= post.title %></h1>
+
+  <!-- HOOK -->
+  <p class="hook"><%= post.hook || "No introduction available." %></p>
+
+  <!-- SECTION 1 -->
+  <% if (post.section1Title || post.section1Content) { %>
+  <div class="section">
+    <h2><%= post.section1Title %></h2>
+    <p><%= post.section1Content %></p>
+  </div>
+  <% } %>
+
+  <!-- SECTION 2 -->
+  <% if (post.section2Title || post.section2Content) { %>
+  <div class="section">
+    <h2><%= post.section2Title %></h2>
+    <p><%= post.section2Content %></p>
+  </div>
+  <% } %>
+
+  <a href="/blog" class="back">← Back to all posts</a>
+
+</div>
+
+<% } %>
+
+</body>
+</html>

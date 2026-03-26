@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+background: linear-gradient(rgba(0,0,0,0.9)),
+            url("/images/kente.jpg");
+background-size: cover;
+background-position: center;
+}
+
+/* HERO */
+.about-hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.about-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+}
+
+.about-hero p {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+/* CONTAINER */
+.about-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* PROFILE */
+.profile {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.profile img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.profile-text h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.profile-text p {
+  color: #cbd5f5;
+  line-height: 1.7;
+}
+
+/* SECTIONS */
+.section {
+  margin-top: 60px;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.section p {
+  color: #cbd5f5;
+  line-height: 1.7;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.skill {
+  background: #1e293b;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* CTA */
+.about-cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.about-cta a {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #f97316;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.about-cta a:hover {
+  background: #ea580c;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .profile {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile img {
+    width: 200px;
+    margin: auto;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<%- include("partials/navbar") %>
+
+<!-- HERO -->
+<section class="about-hero">
+  <h1>About Me</h1>
+  <p>Traveler. Storyteller. Builder.</p>
+</section>
+
+<div class="about-container">
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <img src="/images/shey.png" alt="Profile">
+
+    <div class="profile-text">
+      <h2>Hey, I’m Shey 👋</h2>
+      <p>
+        I’m passionate about exploring Ghana and sharing stories that inspire people to travel,
+        discover new places, and experience culture in a deeper way.
+      </p>
+
+      <p>
+        Beyond travel, I’m also a web developer building platforms that solve real-world problems—
+        blending creativity with technology.
+      </p>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <div class="section">
+    <h2>My Journey</h2>
+    <p>
+      What started as a simple curiosity about places turned into a passion for documenting
+      experiences. From the streets of Accra to hidden gems across Ghana, I’ve been capturing
+      moments and turning them into stories worth sharing.
+    </p>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <h2>What I Do</h2>
+
+    <div class="skills">
+      <span class="skill">Web Development</span>
+      <span class="skill">Travel Blogging</span>
+      <span class="skill">UI Design</span>
+      <span class="skill">Content Creation</span>
+      <span class="skill">Storytelling</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="about-cta">
+    <h2>Want to explore more?</h2>
+    <a href="/blog">Read My Blog →</a>
+  </div>
+
+</div>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>
