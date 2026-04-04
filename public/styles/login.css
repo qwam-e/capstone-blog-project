@@ -1,0 +1,113 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+              url("/images/kente.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* CONTAINER */
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.login-card {
+  width: 350px;
+  padding: 30px;
+  border-radius: 12px;
+
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+}
+
+/* INPUT GROUP */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #1e293b;
+
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+/* INPUT FOCUS */
+.input-group input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 1px #f97316;
+}
+
+/* BUTTON */
+.login-submit {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+
+  background: #f97316;
+  border: none;
+  border-radius: 6px;
+
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.login-submit:hover {
+  background: #ea580c;
+}
+
+/* EXTRA TEXT */
+.login-extra {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.login-extra a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media(max-width: 400px) {
+  .login-card {
+    width: 90%;
+  }
+}

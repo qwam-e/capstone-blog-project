@@ -1,0 +1,233 @@
+/* NAVBAR BASE */
+.navbar {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+  /* max-width: 1200px; */
+
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 25px;
+
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* LEFT SIDE */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* LOGO */
+.logo span {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #fff;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 14px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* HOVER UNDERLINE */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #f97316;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #fff;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE LINK */
+.nav-links li a.active {
+  color: #fff;
+}
+
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  color: #e5e7eb;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #1e293b;
+  border-color: #64748b;
+}
+
+/* BODY OFFSET (IMPORTANT) */
+body {
+  padding-top: 100px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .navbar {
+    padding: 12px 20px;
+  }
+}
+
+
+/* NAVBAR */
+/* .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1e293b;
+} */
+
+/* LEFT SIDE */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* LOGO */
+.logo {
+  text-decoration: none;
+}
+
+.logo span {
+  font-family: 'Playfair Display', serif; 
+  font-size: 26px; 
+  color: white;
+
+}
+
+/* LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 14px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #f97316;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #fff;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE LINK */
+.nav-links li a.active {
+  color: #fff;
+}
+
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  color: #e5e7eb;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #1e293b;
+  border-color: #64748b;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    display: none; /* later you can replace with hamburger */
+  }
+}
