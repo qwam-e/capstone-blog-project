@@ -178,12 +178,4 @@ app.post("/delete/:id", (req, res) => {
   res.redirect("/dashboard");
 });
 
-
-
-
-
-
-
-
-
  app.listen(port, console.log(`Server running on http://localhost:${port}`));
